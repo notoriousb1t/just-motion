@@ -1,0 +1,40 @@
+{
+  "name": "just-motion",
+  "version": "0.0.0",
+  "description": "Just create motion on the web",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm prune && npm install && (npm run unittest:live & npm run build:live)",
+    "test": "npm run unittest && npm run build",
+    "unittest": "mocha --require ts-node/register \"src/**/*_spec@(.ts|.tsx)\"",
+    "unittest:live": "npm run unittest -- --watch --watch-extensions tsx,ts",
+    "build": "webpack -p --config ./webpack.config.js",
+    "build:live": "webpack-dev-server --host 0.0.0.0 --hot --inline --no-info --content-base ./public --config ./webpack.config.js",
+    "precommit": "npm test",
+    "u": "npm install typestyle@latest --save-exact --save"
+  },
+  "author": "Christopher Wallis",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@types/history": "^2.0.39",
+    "@types/marked": "0.0.28",
+    "@types/node": "^6.0.46",
+    "@types/react": "^0.14.43",
+    "@types/react-dom": "^0.14.18",
+    "@types/react-router": "^2.0.38",
+    "awesome-typescript-loader": "^2.2.4",
+    "husky": "^0.11.9",
+    "just-animate": "^1.0.2",
+    "marked": "^0.3.6",
+    "mocha": "^3.1.2",
+    "raw-loader": "^0.5.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^3.0.0",
+    "ts-node": "^1.6.1",
+    "typescript": "^2.1.0-dev.20161028",
+    "typestyle": "0.5.6",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
