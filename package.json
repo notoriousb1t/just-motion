@@ -1,6 +1,6 @@
 {
   "name": "just-motion",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Just create motion on the web",
   "main": "index.js",
   "scripts": {
