@@ -1,24 +1,39 @@
 import * as React from 'react';
-import { colors } from '../styles';
 import { style } from 'typestyle';
-import { just } from 'just-animate';
 
-const className = style({
-    backgroundColor: colors.primaryBg,
-    color: colors.primaryColor
+const navigationClass = style({ 
+    height: 50,
+    left: 0,    
+    position: 'fixed',    
+    right: 0,
+    top: 0
 });
 
-export class Navigation extends React.Component<{}, {}> {
-    public onClick(): void {
-        just.animate({
-            mixins: 'bounceIn',                        
-            targets: 'h1',     
-            to: '2s'
-        });
+const navigationItemClass = style({
+    display: 'inline-block',
+    padding: '0.75rem 0.5rem'
+});
+
+const navigationItems = [
+    {
+        displayText: 'Home'
+    },
+    {
+        displayText: 'Playground'
     }
+];
+
+export class Navigation extends React.Component<{}, {}> {
+
     public render() {
-        return (<div className={className}>
-            <h1 onClick={this.onClick}>Test</h1>
+        return (<div className={navigationClass}>
+            <ul>
+                {navigationItems.map((item) => 
+                    <li className={navigationItemClass}>
+                        {item.displayText}
+                    </li>
+                )}
+            </ul>
         </div>);
     }
 }
