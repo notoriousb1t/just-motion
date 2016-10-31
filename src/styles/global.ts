@@ -1,8 +1,9 @@
 import { cssRule } from 'typestyle';
-import { normalize } from 'typestyle/csx';
+import { normalize, setupPage } from 'typestyle/csx';
 import { colors, fonts } from './variables';
 
 normalize();
+setupPage('#root');
 
 // import normal font for Montserrat
 cssRule('@font-face', {
@@ -35,3 +36,22 @@ cssRule('body', {
     fontFamily: fonts.baseFont,
     fontSize: fonts.baseFontSize
 });
+
+const navbarHeight = '3rem';
+cssRule('#navigation', {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: navbarHeight
+});
+
+cssRule('#contents', {
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    top: navbarHeight,
+    height: `calc(100vh - ${navbarHeight})`
+});
+

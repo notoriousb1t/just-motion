@@ -9,27 +9,36 @@ const navigationClass = style({
     top: 0
 });
 
+const navigationListClass = style({
+    padding: 0
+});
+
 const navigationItemClass = style({
     display: 'inline-block',
-    padding: '0.75rem 0.5rem'
+    padding: '.25rem 1.2rem',
+    '&:first-child': {
+        paddingLeft: '1.5rem'
+    }
 });
 
 const navigationItems = [
     {
+        key: 0,
         displayText: 'Home'
     },
     {
-        displayText: 'Playground'
+        key: 1,
+        displayText: 'Open'
     }
 ];
 
-export class Navigation extends React.Component<{}, {}> {
+export class NavigationComponent extends React.Component<{}, {}> {
 
     public render() {
         return (<div className={navigationClass}>
-            <ul>
+            <ul className={navigationListClass}>
                 {navigationItems.map((item) => 
-                    <li className={navigationItemClass}>
+                    <li key={item.key} className={navigationItemClass}>
                         {item.displayText}
                     </li>
                 )}

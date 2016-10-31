@@ -4,6 +4,7 @@
     "allowJs": true
   },
   "include": [
+    "./typings/**/*",
     "./src/**/*",
     "./scripts/**/*"
   ],

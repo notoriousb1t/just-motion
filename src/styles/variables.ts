@@ -3,7 +3,7 @@ import { black, white } from 'typestyle/csx';
 const baseBgColor = black;
 const baseFgColor = white;
 
-const baseFontSize = 14;
+const baseFontSize = 10.5;
 
 export const colors = {
     baseBgColor: baseBgColor,    
