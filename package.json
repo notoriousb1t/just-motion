@@ -26,7 +26,7 @@
     "golden-layout": "^1.5.6",
     "husky": "^0.11.9",
     "jquery": "^2.1.4",
-    "just-animate": "^1.0.2",
+    "just-animate": "^1.0.4",
     "marked": "^0.3.6",
     "mocha": "^3.1.2",
     "raw-loader": "^0.5.1",
